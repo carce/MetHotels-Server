@@ -1,3 +1,3 @@
 <?php
 
-$db = new mysqli('localhost', 'root', '', 'metHotels');
+$db = new mysqli('localhost', 'root', '', 'methotels');
