@@ -10,5 +10,15 @@ $rooms = array(
             array_push($data, $row);
         }
         return json_encode($data);
+    },
+    
+    'add' => function() {
+        global $db;
+        $name = $_POST['name'];
+        $fits = $_POST['fits'];
+
+        $stmt = $db->query("insert into room (name, fits) values ('$name', $fits)");
+
+        return json_encode(array('success' => $stmt));
     }
 );
