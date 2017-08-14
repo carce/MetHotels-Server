@@ -20,5 +20,14 @@ $rooms = array(
         $stmt = $db->query("insert into room (name, fits) values ('$name', $fits)");
 
         return json_encode(array('success' => $stmt));
+    },
+
+    'delete' => function() {
+        global $db;
+        $id = $_POST['id'];
+
+        $stmt = $db->query("delete from room where id=$id");
+
+        return json_encode(array('success' => $stmt));
     }
 );
